@@ -1,3 +1,13 @@
+/*
+ * Class Name: LonelyTwitterActivity
+ *
+ * Version: Version 1.0
+ *
+ * Date : September 28, 2017
+ *
+ * Copyright (c) Seth Bergen, CMPUT301 University of Alberta - All Rights Reserved. You may use, distribute, or modify this code under terms and conditions of the Code of Students Behavior at University of Alberta
+ */
+
 package ca.ualberta.cs.lonelytwitter;
 
 import java.io.BufferedReader;
@@ -24,6 +34,16 @@ import android.widget.ListView;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+
+/**
+ *  Represents a Tweet
+ *
+ *  @author Seth Bergen
+ *  @version 1.0
+ *  @see NormalTweet
+ *  @see ImportantTweet
+ *  @since 1.0
+ */
 
 public class LonelyTwitterActivity extends Activity {
 
@@ -63,6 +83,9 @@ public class LonelyTwitterActivity extends Activity {
 		});
 	}
 
+	/**
+	 * Called when the activity is started
+	 */
 	@Override
 	protected void onStart() {
 		// TODO Auto-generated method stub
@@ -73,6 +96,9 @@ public class LonelyTwitterActivity extends Activity {
 		oldTweetsList.setAdapter(adapter);
 	}
 
+	/**
+	 * Loads past tweets from file
+	 */
 	private void loadFromFile() {
 		try {
 			FileInputStream fis = openFileInput(FILENAME);
@@ -94,7 +120,10 @@ public class LonelyTwitterActivity extends Activity {
 		}
 
 	}
-	
+
+	/**
+	 * Saves tweets to file
+	 */
 	private void saveInFile() {
 		try {
 			FileOutputStream fos = openFileOutput(FILENAME,
